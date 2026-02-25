@@ -450,7 +450,8 @@ def chat_and_maybe_fill_draft(user_message: str) -> tuple[str, dict]:
     #>포인트(강의용)
     # “LLM = 자연어 응답”이 아니라 “LLM = 구조화 추출 + UI 상태 업데이트”로 확장되는 부분입니다.
 
-    api_key = os.environ["OPENAI_API_KEY"]
+    #api_key = os.environ["OPENAI_API_KEY"]
+    api_key = st.secrets["OPENAI_API_KEY"]
     if not api_key:
         return "OPENAI_API_KEY 환경변수가 설정되어 있지 않습니다. 키를 설정한 뒤 다시 시도해 주세요.", {}
 
